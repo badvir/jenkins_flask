@@ -14,7 +14,7 @@ node {
        }
        stage('Tag') {
             sh(script: '''docker tag ${DOCKER_USER_ID}/flask \
-            ${DOCKER_USER_ID}/flask:${BUILD_NUMBER}''') 
+            ${DOCKER_USER_ID}/flask:${BUILD_NUMBER}''')
        }
        stage('Push') {
             sh(script: 'docker login -u ${DOCKER_USER_ID} -p ${DOCKER_USER_PASSWORD}')
