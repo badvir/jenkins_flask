@@ -18,7 +18,7 @@ node {
        }
        stage('Push') {
             sh(script: 'docker login -u ${DOCKER_USER_ID} -p ${DOCKER_USER_PASSWORD}')
-            sh(script: 'docker push ${DOCKER_USER_ID}/flask:19')
+            sh(script: 'docker push ${DOCKER_USER_ID}/flask:${BUILD_NUMBER}')
             sh(script: 'docker push ${DOCKER_USER_ID}/flask:latest')
        }
        stage('Deploy') {
